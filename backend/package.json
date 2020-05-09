@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node --inspect=5858 -r ts-node/register app.ts",
+    "start:dev": "nodemon app.js",
+    "codestyle-typescript-check": "standardx --parser @typescript-eslint/parser --plugin typescript \"app.ts\" \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\"",
+    "codestyle-typescript-fix": "standardx --parser @typescript-eslint/parser --plugin typescript \"app.ts\" \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\" --fix",
+    "build": "tsc"
   },
   "author": "Patryk Wojtas",
   "license": "UNLICENSED",
@@ -20,9 +23,17 @@
     "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.2",
     "standard": "^14.3.3",
+    "standardx": "^5.0.0",
+    "typescript": "^3.8.3",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-typescript": "^0.14.0",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.10.1"
   }
 }

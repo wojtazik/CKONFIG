@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "__tests__/**/**/*",
+    "node_modules"
+  ],
+  "watch": [
+    "src",
+    "app.ts"
+  ],
+  "exec": "npm start",
+  "ext": "ts"
+}

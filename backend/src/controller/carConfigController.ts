@@ -1,5 +1,4 @@
 const getPossibleCarsOptions = async (req, res, next) => {
-
   try {
     res.json({
       carName: 'Cupra AWD',
@@ -42,32 +41,29 @@ const getPossibleCarsOptions = async (req, res, next) => {
         {
           colorCode: 'red',
           price: 0,
-          isDefault: true,
+          isDefault: true
         },
         {
           colorCode: 'green',
           price: 20,
-          isDefault: false,
+          isDefault: false
         },
         {
           colorCode: 'yellow',
           price: 25,
-          isDefault: false,
+          isDefault: false
         },
         {
           colorCode: 'black',
           price: 39,
-          isDefault: false,
+          isDefault: false
         }
       ]
     })
   } catch (err) {
-    const error = new HttpError(
-      'Fetching users failed, please try again later.',
-      500
-    );
-    return next(error);
+    res.status(500).send(new Error('Something goes wrong'))
+    return next()
   }
 }
 
-exports.getPossibleCarsOptions = getPossibleCarsOptions
+export { getPossibleCarsOptions }
