@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 const Ckonfig = () => {
   useEffect(() => {
-    fetch('http://localhost:9000/api/car-config')
+    fetch('http://localhost:9000/api/car-config/add')
       .then((res) => res.json())
       .then((res) => {
         console.log(res)

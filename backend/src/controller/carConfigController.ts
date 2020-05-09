@@ -1,4 +1,28 @@
+import { createCarOption } from '../database/mongoose'
+
 const getPossibleCarsOptions = async (req, res, next) => {
+  try {
+    res.json({
+      possibleCars: [
+        {
+          name: 'Cupra AWD',
+          id: 123
+        },
+        {
+          name: 'Cupra RWD',
+          id: 122
+        }
+      ]
+    })
+  } catch (err) {
+    res.status(500).send(new Error('Something goes wrong'))
+    return next()
+  }
+}
+
+const addSpecificCarOption = createCarOption
+
+const getSpecificCarOption = (req, res, next) => {
   try {
     res.json({
       carName: 'Cupra AWD',
@@ -11,8 +35,14 @@ const getPossibleCarsOptions = async (req, res, next) => {
           automaticPrice: 29,
           marketingName: '2.0 Turbo',
           allowedGearbox: [
-            'manual',
-            'automatic'
+            {
+              name: 'manual',
+              price: 0
+            },
+            {
+              name: 'automatic',
+              price: 50
+            }
           ]
         },
         {
@@ -22,8 +52,14 @@ const getPossibleCarsOptions = async (req, res, next) => {
           manualPrice: 0,
           automaticPrice: 32,
           allowedGearbox: [
-            'manual',
-            'automatic'
+            {
+              name: 'manual',
+              price: 0
+            },
+            {
+              name: 'automatic',
+              price: 75
+            }
           ]
         },
         {
@@ -33,7 +69,10 @@ const getPossibleCarsOptions = async (req, res, next) => {
           manualPrice: null,
           automaticPrice: 0,
           allowedGearbox: [
-            'automatic'
+            {
+              name: 'automatic',
+              price: 0
+            }
           ]
         }
       ],
@@ -66,4 +105,4 @@ const getPossibleCarsOptions = async (req, res, next) => {
   }
 }
 
-export { getPossibleCarsOptions }
+export { getPossibleCarsOptions, addSpecificCarOption }

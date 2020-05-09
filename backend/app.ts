@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import carConfigRoutes from './src/routes/carConfigRoutes'
-
 const app = express()
 
 app.use(bodyParser.json())
