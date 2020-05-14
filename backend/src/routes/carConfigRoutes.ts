@@ -1,9 +1,10 @@
-import express from 'express'
-import { addSpecificCarOption, getPossibleCarsOptions } from '../controller/carConfigController'
+import express, {Router} from 'express'
+import {getCar, getCars, getPossibleCarsOptions} from '../controller/carConfigController'
 
-const router = express.Router()
+const router: Router = express.Router()
 
-router.get('/', getPossibleCarsOptions)
-router.get('/add', addSpecificCarOption)
+router.get('/possible-cars', getPossibleCarsOptions)
+router.get('/cars', getCars)
+router.get('/cars/:name', getCar)
 
 export default router

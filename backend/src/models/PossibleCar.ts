@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
+import mongoose, {Schema} from 'mongoose'
 
-const possibleCarSchema = new mongoose.Schema({
+const PossibleCarSchema: Schema = new mongoose.Schema({
   name: String,
   isDefault: Boolean
 })
 
-export default mongoose.model('PossibleCar', possibleCarSchema)
+export default mongoose.model('PossibleCar', PossibleCarSchema)

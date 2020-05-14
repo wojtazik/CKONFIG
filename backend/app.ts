@@ -1,7 +1,7 @@
-import express from 'express'
+import express, {Express} from 'express'
 import bodyParser from 'body-parser'
 import carConfigRoutes from './src/routes/carConfigRoutes'
-const app = express()
+const app: Express = express()
 
 app.use(bodyParser.json())
 app.use((req, res, next) => {
@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use('/api/car-config', carConfigRoutes)
+app.use('/api', carConfigRoutes)
 
 app.use((req, res, next) => {
   const error = new Error('Couldn\'t find this route')

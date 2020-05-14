@@ -1,109 +1,35 @@
 import mongoose from 'mongoose'
+import PossibleCarSchema from '../models/PossibleCar'
 import CarOption from '../models/CarOption'
-import { response } from 'express'
+import {NextFunction, Request, Response} from "express";
+import readUrlName from "../helper/readUrlName";
 
-mongoose.connect('mongodb+srv://USER_ID:USER_PASSWORD@carsoptions-uedal.mongodb.net/DB_NAME?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://[NAME]:[PASSWORD]@carsoptions-uedal.mongodb.net/[DB_NAME]?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
-  console.log('connected to the db')
+  console.log('db_connected')
 }).catch(() => {
-  console.error('Connection to the fb failed')
+  console.error('db_connection_error')
 })
 
-const createCarOption = async (req, res, next) => {
-  const createdCarOption = new CarOption({
-    carName: 'PRO RS3',
-    price: 12420,
-    possibleEngines: [
-      {
-        displacementCC: 5187,
-        price: 692,
-        horsepPower: 532,
-        isDefault: true,
-        allowedGearbox: [
-          {
-            name: 'automatic',
-            price: 0
-          }
-        ]
-      },
-      {
-        displacementCC: 4212,
-        price: 466,
-        horsepPower: 443,
-        isDefault: false,
-        allowedGearbox: [
-          {
-            name: 'automatic',
-            price: 120
-          },
-          {
-            name: 'manual',
-            price: 0
-          }
-        ]
-      },
-      {
-        displacementCC: 3589,
-        price: 422,
-        horsepPower: 374,
-        isDefault: false,
-        allowedGearbox: [
-          {
-            name: 'automatic',
-            price: 100
-          },
-          {
-            name: 'manual',
-            price: 0
-          }
-        ]
-      },
-      {
-        displacementCC: 1998,
-        price: 0,
-        horsepPower: 166,
-        isDefault: false,
-        allowedGearbox: [
-          {
-            name: 'manual',
-            price: 0
-          }
-        ]
-      }
-    ],
-    colors: [
-      {
-        colorCode: 'red',
-        price: 0,
-        isDefault: true
-      },
-      {
-        colorCode: 'gray',
-        price: 44,
-        isDefault: false
-      },
-      {
-        colorCode: 'orange',
-        price: 52,
-        isDefault: false
-      },
-      {
-        colorCode: 'black',
-        price: 71,
-        isDefault: false
-      }
-    ]
-  })
+const getPossibleCars = async (req: Request, res: Response, next: NextFunction) => {
+  const possibleCars = await PossibleCarSchema.find().exec()
 
-  try {
-    const result = await createdCarOption.save()
-    response.json(result)
-  } catch (e) {
-    response.status(500).send('something goes wrong on savind data to db')
-    next()
-  }
+  res.json(possibleCars)
 }
 
-export { createCarOption }
+const getCarsConfig = async (req: Request, res: Response, next: NextFunction) => {
+  const possibleCars = await PossibleCarSchema.find().exec()
+
+  res.json(possibleCars)
+}
+
+const getCarConfig = async (req: Request, res: Response, next: NextFunction) => {
+  const carName:String = readUrlName(req.params.name)
+  const car = await CarOption.findOne({carName: carName}).exec()
+
+  res.json(car)
+}
+
+export { getPossibleCars, getCarsConfig, getCarConfig }

@@ -1,11 +1,11 @@
-import mongoose from 'mongoose'
+import mongoose, {Schema} from 'mongoose'
 
-const gearboxSchema = new mongoose.Schema({
+const gearboxSchema: Schema = new mongoose.Schema({
   name: String,
   price: Number
 })
 
-const engineSchema = new mongoose.Schema({
+const engineSchema: Schema = new mongoose.Schema({
   displacementCC: Number,
   price: Number,
   horsePower: String,
@@ -13,17 +13,18 @@ const engineSchema = new mongoose.Schema({
   allowedGearbox: [gearboxSchema]
 })
 
-const colorSchema = new mongoose.Schema({
+const colorSchema: Schema = new mongoose.Schema({
   colorCode: String,
   price: Number,
   isDefault: Boolean
 })
 
-const carOptionSchema = new mongoose.Schema({
+const carOptionSchema: Schema = new mongoose.Schema({
   carName: String,
   price: Number,
   possibleEngines: [engineSchema],
-  colors: [colorSchema]
+  colors: [colorSchema],
+  customColorPrice: Number
 })
 
 export default mongoose.model('CarOption', carOptionSchema)
