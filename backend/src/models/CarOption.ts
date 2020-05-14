@@ -2,7 +2,8 @@ import mongoose, {Schema} from 'mongoose'
 
 const gearboxSchema: Schema = new mongoose.Schema({
   name: String,
-  price: Number
+  price: Number,
+  isDefault: Boolean
 })
 
 const engineSchema: Schema = new mongoose.Schema({
