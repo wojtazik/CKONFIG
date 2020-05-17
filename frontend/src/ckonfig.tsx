@@ -15,7 +15,6 @@ if (document.getElementById('ckonfig-root')) {
   const store = createStore(reducerRoot, applyMiddleware(thunk))
 
   const i18nInstance = i18n.createInstance()
-  console.log(config.startingLanguage)
   i18nInstance
     .use(initReactI18next)
     .init({
