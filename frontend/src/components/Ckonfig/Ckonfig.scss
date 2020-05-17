@@ -1,0 +1,27 @@
+@import '../../styles/Variables';
+@import '../../styles/mixin';
+
+.ckonfig {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    @include app-height;
+
+    background: $bg-lightest;
+    box-shadow: -10px 24px 51px 7px rgba(24,53,88,.15);
+  }
+
+  &__row-wrapper {
+    height: 100%;
+    position: relative;
+
+    @include media-breakpoint(md) {
+      flex-direction: column-reverse;
+    }
+  }
+}

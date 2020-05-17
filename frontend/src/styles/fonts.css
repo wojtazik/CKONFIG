@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "icons";
+    src: url("../assets/fonts/icons.eot?0c6d26cd3fdec5ac7faf3faa21cf5f30?#iefix") format("embedded-opentype"),
+url("../assets/fonts/icons.woff2?0c6d26cd3fdec5ac7faf3faa21cf5f30") format("woff2"),
+url("../assets/fonts/icons.woff?0c6d26cd3fdec5ac7faf3faa21cf5f30") format("woff"),
+url("../assets/fonts/icons.ttf?0c6d26cd3fdec5ac7faf3faa21cf5f30") format("truetype"),
+url("../assets/fonts/icons.svg?0c6d26cd3fdec5ac7faf3faa21cf5f30#icons") format("svg");
+}
+
+i[class^="ico-"]:before, i[class*=" ico-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-car-PRO-RS3:before {
+    content: "\f101";
+}
+.ico-car-STANDARD:before {
+    content: "\f102";
+}
+.ico-car-UBER-RS2:before {
+    content: "\f103";
+}
+.ico-car-WK:before {
+    content: "\f104";
+}

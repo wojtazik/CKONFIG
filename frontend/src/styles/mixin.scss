@@ -1,0 +1,85 @@
+@import "Variables";
+
+@mixin media-breakpoint($breakpoint) {
+  @if $breakpoint == lg {
+    @media only screen and (max-width: 1199.98px) {
+      @content
+    }
+  }
+  @if $breakpoint == md {
+    @media only screen and (max-width: 991.98px) {
+      @content
+    }
+  }
+  @if $breakpoint == sm {
+    @media only screen and (max-width: 767.98px) {
+      @content
+    }
+  }
+  @if $breakpoint == xs {
+    @media only screen and (max-width: 575.98px) {
+      @content
+    }
+  }
+}
+
+@mixin app-height {
+  min-height: 450px;
+
+  @include media-breakpoint(md) {
+    min-height: 700px;
+  }
+}
+
+@mixin base-button {
+  padding: 9px 9px;
+  margin-right: 15px;
+  border-radius: 3px;
+  min-width: 120px;
+  max-width: 130px;
+  background: $bg-light;
+  color: $font-dark;
+  text-align: center;
+  cursor: pointer;
+  transition: all .15s ease-in;
+  white-space: nowrap;
+  outline: 1px solid rgba(0,0,0,0);
+  outline-offset: 0;
+
+  @include media-breakpoint(xs) {
+    &:nth-child(even) {
+      margin-left: auto;
+    }
+
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+
+  @include media-breakpoint(md) {
+    min-width: 110px;
+    max-width: 120px;
+  }
+}
+
+@mixin move-outline {
+  @keyframes outline-move {
+    0% {
+      outline: 1px solid rgba(0,0,0,0);
+      outline-offset: 0;
+    }
+    1% {
+      outline: 1px solid rgba(0,0,0,1);
+      outline-offset: 0;
+    }
+    50% {
+      outline: 2px solid rgba(0,0,0,0);
+      outline-offset: 5px;
+    }
+  }
+  outline: 1px solid rgba(0,0,0,0);
+  outline-offset: 0;
+
+  &:hover {
+    animation: outline-move .6s linear both;
+  }
+}

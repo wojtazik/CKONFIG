@@ -1,0 +1,41 @@
+@import '../../styles/Variables';
+@import '../../styles/mixin';
+
+.summary-data {
+  color: $font-light;
+  list-style: none;
+  padding-left: 0;
+  max-width: 310px;
+  margin: 25px auto 0;
+
+  @include media-breakpoint(md) {
+    flex-grow: 1;
+    margin-left: 35px;
+  }
+
+  @include media-breakpoint(sm) {
+    margin-left: 15px;
+  }
+
+  @include media-breakpoint(xs) {
+    margin: 0 auto 0 15px;
+  }
+
+  &__item {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-basic;
+    line-height: $font-size-basic;
+
+    @include media-breakpoint(xs) {
+      margin: 0 0 10px 0;
+    }
+
+    &--price {
+      margin-top: 25px;
+    }
+  }
+}

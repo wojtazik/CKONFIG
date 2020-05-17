@@ -72,7 +72,8 @@ export function carOptionReducer (state: ICarOption = null, action: ISetCarPrope
             {
               colorCode: (<ISetCarColor>action).payload.colorCode,
               isSelected: true,
-              price: (<ISetCarColor>action).payload.price
+              price: (<ISetCarColor>action).payload.price,
+              _id: (<ISetCarColor>action).payload._id || null
             }
           ]
         }

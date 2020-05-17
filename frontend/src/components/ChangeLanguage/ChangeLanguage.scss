@@ -1,0 +1,41 @@
+@import '../../styles/Variables';
+
+.change-language {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    color: $font-dark;
+    padding: 0 5px;
+    font-size: $font-size-small;
+    border: 1px solid $font-dark;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #FFF;
+      color: #FFF;
+      background: $font-dark;
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &--selected {
+      border: 1px solid #FFF;
+      color: #FFF;
+      background: $font-dark;
+    }
+  }
+}

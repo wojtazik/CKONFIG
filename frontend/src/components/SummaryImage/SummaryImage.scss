@@ -1,0 +1,39 @@
+@import '../../styles/Variables';
+@import '../../styles/mixin';
+
+.summary-image {
+  width: 100%;
+  max-width: 310px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $bg-lightest;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @include media-breakpoint(md) {
+    margin-left: unset;
+    margin-right: unset;
+  }
+
+  @include media-breakpoint(sm) {
+    max-width: 250px;
+    height: 180px;
+  }
+
+  @include media-breakpoint(xs) {
+    max-width: 120px;
+    height: 80px;
+  }
+
+  &__icon {
+    font-size: 180px;
+    display: flex;
+
+    @include media-breakpoint(xs) {
+      font-size: 72px;
+    }
+  }
+}

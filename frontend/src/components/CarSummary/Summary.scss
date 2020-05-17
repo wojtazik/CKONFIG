@@ -1,0 +1,33 @@
+@import '../../styles/Variables';
+@import '../../styles/mixin';
+
+.summary {
+  min-height: 450px;
+  background: $bg-darkest;
+  padding: 25px 35px 35px;
+  position: relative;
+
+  @include media-breakpoint(md) {
+    display: flex;
+    flex-direction: row;
+    min-height: unset;
+    padding: 35px;
+  }
+
+  @include media-breakpoint(xs) {
+    padding-bottom: 15px;
+  }
+
+  &__title {
+    color: $font-light;
+    display: block;
+    text-align: end;
+    margin-bottom: 25px;
+
+    @include media-breakpoint(md) {
+      position: absolute;
+      top: 5px;
+      text-align: start;
+    }
+  }
+}
