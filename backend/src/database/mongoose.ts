@@ -3,8 +3,9 @@ import PossibleCarSchema from '../models/PossibleCar'
 import CarOption from '../models/CarOption'
 import {NextFunction, Request, Response} from "express";
 import readUrlName from "../helper/readUrlName";
+import config from '../config/config'
 
-mongoose.connect('mongodb+srv://[NAME]:[PASSWORD]@carsoptions-uedal.mongodb.net/[DB_NAME]?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${config.DB_USER}:${config.DB_PASSWORD}@carsoptions-uedal.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
