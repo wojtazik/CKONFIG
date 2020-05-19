@@ -37,13 +37,13 @@ npm run start:dev
 ```
 from ```/frontend``` directory
 
-###Frontend tests:
+### Frontend tests:
 when you are in ```/frontend``` directory, just run command:
 ```bash
 npm run test
 ```
 
-#Codestyle:
+# Codestyle:
 Both frondend and backend app are using standardx npm package with custom rules and typescript checker.
 for run checking codestyle, go to ```/backend``` or ```/frontend``` directory, and run:
 ```bash
