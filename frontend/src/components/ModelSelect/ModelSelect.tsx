@@ -16,7 +16,7 @@ const ModelSelect = () => {
     dispatch(getSelectedCar(name))
   }
 
-  return (
+  return possibleCars ? (
     <div className='car-configuration__section'>
       <span className='car-configuration__section-name'>{t('model')}</span>
       <ul className='car-configuration__section-list'>
@@ -40,7 +40,7 @@ const ModelSelect = () => {
         )}
       </ul>
     </div>
-  )
+  ) : null
 }
 
 export default ModelSelect

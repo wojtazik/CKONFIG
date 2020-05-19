@@ -1,7 +1,7 @@
 import { IPossibleCar } from '../../model/possibleCarInterface'
 import { ISetPossibleCars, SET_POSSIBLE_CARS } from '../actions/actionsType'
 
-export function possibleCarsReducer (state: IPossibleCar[] = [], action: ISetPossibleCars) {
+export function possibleCarsReducer (state: IPossibleCar[] = null, action: ISetPossibleCars) {
   switch (action.type) {
     case SET_POSSIBLE_CARS:
       state = action.payload

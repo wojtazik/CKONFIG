@@ -9,7 +9,7 @@ import ChangeLanguage from '../ChangeLanguage/ChangeLanguage'
 
 const CarConfiguration = () => {
   return (
-    <div className='car-configuration'>
+    <div className='car-configuration' data-testid='carConfiguration'>
       <span className='car-configuration__name'>{appConfig.appName} {appConfig.appVersion}</span>
       <ChangeLanguage />
       <ModelSelect />

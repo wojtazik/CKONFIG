@@ -19,6 +19,7 @@
     "uuid": "^8.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^10.0.4",
     "@types/axios": "^0.14.0",
     "@types/bootstrap": "^4.3.3",
     "@types/i18next": "^13.0.0",
@@ -42,6 +43,7 @@
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.0.4",
     "icon-font-generator": "^2.1.10",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.7",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
