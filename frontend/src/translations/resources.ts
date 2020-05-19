@@ -8,7 +8,8 @@ const resources = {
       engine: 'Silnik',
       gearbox: 'Skrzynia biegów',
       model: 'Model',
-      price: 'Cena'
+      price: 'Cena',
+      errorMessage: 'Ups! Coś poszło nie tak! :('
     }
   },
   en: {
@@ -20,7 +21,8 @@ const resources = {
       engine: 'Engine',
       gearbox: 'Gearbox',
       model: 'Model',
-      price: 'Price'
+      price: 'Price',
+      errorMessage: 'Oops! Something goes wrong! :('
     }
   }
 }

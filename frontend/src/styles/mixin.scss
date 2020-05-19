@@ -83,3 +83,25 @@
     animation: outline-move .6s linear both;
   }
 }
+
+@mixin animate-fly {
+  @keyframes fly {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(10vh, -10vw);
+    }
+    50% {
+      transform: translate(-10vh, 10vw);
+    }
+    75% {
+      transform: translate(10vh, 10vw);
+    }
+    100% {
+      transform: translate(0,0);
+    }
+  }
+
+  animation: fly 12s linear infinite;
+}
