@@ -13,11 +13,7 @@ export default (component: any, store: Store) => {
     .use(initReactI18next)
     .init({
       resources,
-      lng: config.startingLanguage,
-      keySeparator: false,
-      interpolation: {
-        escapeValue: false
-      }
+      lng: config.startingLanguage
     })
 
   return {

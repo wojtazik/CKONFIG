@@ -7,13 +7,15 @@ const ChangeLanguage = () => {
   const { i18n } = useTranslation()
 
   return (
-    <div className='change-language'>
+    <div className='change-language' data-testid='changeLanguage'>
       {config.languages.map((lang: string) => (
         <div
           className={`change-language__item ${i18n.language === lang ? 'change-language__item--selected' : ''}`}
+          data-testid='changeLanguage-item'
           key={lang}
           onClick={() => { i18n.changeLanguage(lang) }}
-        >{lang.toUpperCase()}
+        >
+          {lang.toUpperCase()}
         </div>
       ))}
     </div>

@@ -29,13 +29,14 @@ const ColorSelect = () => {
   }
 
   return selectedCar ? (
-    <div className='car-configuration__section'>
+    <div className='car-configuration__section' data-testid='colorSelect'>
       <span className='car-configuration__section-name'>{t('configuration.color')}</span>
       <ul className='car-configuration__section-list car-configuration__section-list--colors'>
         {selectedCar.colors.map((color: ICarColor) => {
           return (
             <li
               key={color._id.toString()}
+              data-testid='colorSelect-item'
               onClick={() => { onColorSelect(color) }}
               onKeyDown={(event) => {
                 if (event.keyCode === 13) {
@@ -53,6 +54,7 @@ const ColorSelect = () => {
       <div className='car-configuration__color-button-wrapper'>
         <button
           className='car-configuration__custom-color-button'
+          data-testid='colorSelect-show-picker'
           onClick={() => { setShowColorCustomization(!showColorCustomization) }}
           onKeyPress={(event) => {
             if (event.keyCode === 13) {
@@ -76,7 +78,7 @@ const ColorSelect = () => {
           </button>}
       </div>
       {showColorCustomization &&
-        <div className='car-configuration__custom-color-wrapper'>
+        <div className='car-configuration__custom-color-wrapper' data-testid='colorSelect-color-picker'>
           <HuePicker color={customColor} onChange={(color: ColorResult) => setCustomColor(color.rgb)} />
         </div>}
     </div>

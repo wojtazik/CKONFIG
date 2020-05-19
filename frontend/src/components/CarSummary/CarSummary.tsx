@@ -8,7 +8,7 @@ const CarSummary = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='summary'>
+    <div className='summary' data-testid='carSummary'>
       <span className='summary__title'>{t('summary.text')}</span>
       <SummaryImage />
       <SummaryData />

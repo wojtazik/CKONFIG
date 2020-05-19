@@ -16,7 +16,7 @@ const GearboxSelect = () => {
   }
 
   return selectedCar ? (
-    <div className='car-configuration__section'>
+    <div className='car-configuration__section' data-testid='gearboxSelect'>
       <span className='car-configuration__section-name'>{t('gearbox')}</span>
       <ul className='car-configuration__section-list'>
         {selectedCar.possibleEngines.find((engine: IPossibleEngine) => engine.isSelected).allowedGearbox.map((gearbox: IAllowedGearbox) => {

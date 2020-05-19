@@ -17,7 +17,7 @@ const EngineSelect = () => {
   }
 
   return selectedCar ? (
-    <div className='car-configuration__section'>
+    <div className='car-configuration__section' data-testid='engineSelect'>
       <span className='car-configuration__section-name'>{t('engine')}</span>
       <ul className='car-configuration__section-list'>
         {selectedCar.possibleEngines.map((engine: IPossibleEngine) => {
